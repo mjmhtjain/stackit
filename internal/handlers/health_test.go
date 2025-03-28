@@ -16,7 +16,7 @@ func TestGetHealthDirectMock(t *testing.T) {
 	w := httptest.NewRecorder()
 
 	c, _ := gin.CreateTestContext(w)
-	handler := NewHandler()
+	handler := NewHealthHandler()
 
 	// Call the handler function directly
 	handler.GetHealth(c)

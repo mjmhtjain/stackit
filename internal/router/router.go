@@ -9,10 +9,10 @@ import (
 func SetupRouter() *gin.Engine {
 	r := gin.Default()
 
-	handler := handlers.NewHandler()
+	healthHandler := handlers.NewHealthHandler()
 
 	// Health check endpoint
-	r.GET("/health", handler.GetHealth)
+	r.GET("/health", healthHandler.GetHealth)
 
 	return r
 }

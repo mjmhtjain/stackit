@@ -2,15 +2,16 @@ package handlers
 
 import "github.com/gin-gonic/gin"
 
-type Handler struct {
+type HealthHandler struct {
 }
 
-func NewHandler() *Handler {
-	return &Handler{}
+func NewHealthHandler() *HealthHandler {
+	return &HealthHandler{}
 }
 
-func (h *Handler) GetHealth(c *gin.Context) {
+func (h *HealthHandler) GetHealth(c *gin.Context) {
 	c.JSON(200, gin.H{
-		"status": "ok",
+		"status":  "ok",
+		"message": "Stackit is running",
 	})
 }

@@ -26,3 +26,11 @@ stop:
 # View logs
 logs:
 	docker-compose logs -f 
+
+# Run all test cases
+test:
+	go test ./...
+
+# Run test coverage
+test-coverage:
+	go test -cover ./...

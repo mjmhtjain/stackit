@@ -14,5 +14,8 @@ func SetupRouter() *gin.Engine {
 	// Health check endpoint
 	r.GET("/health", healthHandler.GetHealth)
 
+	usageHandler := handlers.NewUsageHandler()
+	r.POST("/usage", usageHandler.PostUsage)
+
 	return r
 }

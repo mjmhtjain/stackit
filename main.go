@@ -1,7 +1,12 @@
 package main
 
-import "fmt"
+import (
+	"os"
+
+	"github.com/mjmhtjain/stackit/internal/router"
+)
 
 func main() {
-	fmt.Println("Hello, World!")
+	r := router.SetupRouter()
+	r.Run(":" + os.Getenv("PORT"))
 }
